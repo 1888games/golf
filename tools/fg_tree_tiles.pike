@@ -1,6 +1,6 @@
 // Process PNG file for foreground tree tiles (*5).
 
-constant FILENAME = "/home/matthew/hp2_progs/programming/6510assembly/commodore_golf/assets/mc_tree_tiles.png";
+constant FILENAM= "/users/nick/Dropbox/C64/Projects/Backburner/PGA/assets/mc_tree_tiles.png";
 constant PIXEL_PATTERN = 0b11;
 array(int) byte_array = ({});
 enum { RED, GREEN, BLUE };

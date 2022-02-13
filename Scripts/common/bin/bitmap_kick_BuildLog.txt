@@ -1,0 +1,10 @@
+parsing
+flex pass 1
+Output pass
+Writing prg file: /Users/nick/Dropbox/C64/Projects/Backburner/PGA/Scripts/common/bin/bitmap_kick.prg
+
+Memory Map
+----------
+
+Writing Vice symbol file: /Users/nick/Dropbox/C64/Projects/Backburner/PGA/Scripts/common/bin/bitmap_kick.vs
+Writing Symbol file: bitmap_kick.sym

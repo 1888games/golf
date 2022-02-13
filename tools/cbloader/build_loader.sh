@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CORE_DIR='/home/matthew/hp2_progs/programming/6510assembly/golfgit/commodore-golf/src/core'
+CORE_DIR='/users/nick/Dropbox/C64/Projects/Backburner/PGA/src/core/'
 
 function toupper {
     echo $1 | tr 'a-z' 'A-Z'
@@ -13,8 +13,8 @@ cp -f ${CORE_DIR}/vic_ii_template.asm ${CORE_DIR}/vic_ii.asm
 # the loader code.  Copy this into the config file before building.
 #myinput=$(< /dev/stdin)
 linematch=`grep ZP_LOADER_01 ${CORE_DIR}/zeropage.asm`
-#myinput=`./get_zp_value.pl "${linematch}"`
-myinput=`get_c64_label_value "${linematch}"`
+myinput=`./get_zp_value.pl "${linematch}"`
+#myinput=`get_c64_label_value "${linematch}"`
 
 myzpbase=$(printf "%02x" ${myinput})
 myzpbase2=$(printf "%02x" $((myinput + 8)))

@@ -102,7 +102,7 @@ void write_evolved()
     fout->write("%s", (string) myarr);
     fout->close();
 
-    string dest = "/home/matthew/hp2_progs/programming/6510assembly/golfgit/commodore-golf/src/newclubs.bin";
+    string dest = "users/nick/Dropbox/C64/Projects/Backburner/PGA/src/newclubs.bin";
     int result = Stdio.cp(binfile, dest);
     write("result=%d\n", result);
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright 2020 Matthew Clarke
 
-BASE_DIR="/home/matthew/hp2_progs/programming/6510assembly/golfgit/commodore-golf"
+BASE_DIR="/users/nick/Dropbox/C64/Projects/Backburner/PGA/"
 SRC_DIR="${BASE_DIR}/src"
 export ACME="${SRC_DIR}"
 ASSETS_DIR="${BASE_DIR}/assets"
@@ -9,12 +9,12 @@ TOOLS_DIR="${BASE_DIR}/tools"
 BACKDROPS_DIR="${ASSETS_DIR}/backdrops"
 TREES_DIR="${ASSETS_DIR}/trees"
 
-cd ${TOOLS_DIR}/zeropage_builder
-if ! pike zp_builder.pike 
-then
-    echo "Cannot build 'zero_page.asm' from template!"
-    exit
-fi
+# cd ${TOOLS_DIR}/zeropage_builder
+# if ! pike zp_builder.pike 
+# then
+#     echo "Cannot build 'zero_page.asm' from template!"
+#     exit
+# fi
 
 cd ${TOOLS_DIR}/cbloader
 if ! ./build_loader.sh
@@ -23,24 +23,24 @@ then
     exit
 fi
 
-# Make sure splash screen is up-to-date.
-cd ${TOOLS_DIR}
-if ! ./process_splash.pl
-then
-    echo "Cannot process splash!"
-    exit
-fi
+# # Make sure splash screen is up-to-date.
+# cd ${TOOLS_DIR}
+# if ! ./process_splash.pl
+# then
+#     echo "Cannot process splash!"
+#     exit
+# fi
 
-# Club velocities for punch shots.
-# May want to experiment with input values!
-speed_reduction="0.9"
-angle_reduction="0.33"
-cd ${TOOLS_DIR}/clubs
-if ! pike punch_creator.pike ${speed_reduction} ${angle_reduction}
-then
-    echo "Cannot create punch velocities!"
-    exit
-fi
+# # Club velocities for punch shots.
+# # May want to experiment with input values!
+# speed_reduction="0.9"
+# angle_reduction="0.33"
+# cd ${TOOLS_DIR}/clubs
+# if ! pike punch_creator.pike ${speed_reduction} ${angle_reduction}
+# then
+#     echo "Cannot create punch velocities!"
+#     exit
+# fi
 
 # Build the core.
 cd ${SRC_DIR}/core
@@ -164,14 +164,14 @@ do
     # process backdrops for this course.
     if [ -e "${coursedir}/bdrop.png" ]
     then
-        echo "Must process backdrop for ${item}!!!"
-        cd ${TOOLS_DIR}/backdrop_builder_2020
-        pike pattern_builder.pike "${count}" "${BASE_DIR}"
+        # echo "Must process backdrop for ${item}!!!"
+        # cd ${TOOLS_DIR}/backdrop_builder_2020
+        # pike pattern_builder.pike "${count}" "${BASE_DIR}"
 
-        # Data will be loaded directly into the module. First isolate the
-        # relevant line in the labels file to pass to Pike program.
-        bdrop_data_dest=`grep bdrop_v_num_distant_objects ${SRC_DIR}/play/labels.txt`
-        pike prepare_backdrop_files.pike "${count}" "${bdrop_data_dest}" "${BACKDROPS_DIR}"
+        # # Data will be loaded directly into the module. First isolate the
+        # # relevant line in the labels file to pass to Pike program.
+        # bdrop_data_dest=`grep bdrop_v_num_distant_objects ${SRC_DIR}/play/labels.txt`
+        # pike prepare_backdrop_files.pike "${count}" "${bdrop_data_dest}" "${BACKDROPS_DIR}"
 
         # Crunch 'backdrop.bin' file and write to disk.
         # In same directory, crunch 'sxx.bin' and write to disk.
@@ -200,22 +200,22 @@ do
     # process trees for this course.
     if [ -e "${coursedir}/tiles.png" ]
     then
-        echo "Must process trees for ${item}!!!"
-        cd ${TOOLS_DIR}/tree_builder_2020
-        if ! ./build_trees.sh ${count} ${TREES_DIR}
-        then
-            echo "Cannot build trees!"
-            exit 1
-        fi
-        # Now we have a 'txx.bin' file in ${coursedir}...
-        # Need to know the destination address for our data file.
-        tree_data_dest=`grep trees_v_heights ${SRC_DIR}/play/labels.txt`
-        echo ${tree_data_dest}
-        if ! pike prepare_tree_data_file.pike "${count}" "${tree_data_dest}" "${TREES_DIR}"
-        then
-            echo "Cannot prepare tree data file!"
-            exit 1
-        fi
+        # echo "Must process trees for ${item}!!!"
+        # cd ${TOOLS_DIR}/tree_builder_2020
+        # if ! ./build_trees.sh ${count} ${TREES_DIR}
+        # then
+        #     echo "Cannot build trees!"
+        #     exit 1
+        # fi
+        # # Now we have a 'txx.bin' file in ${coursedir}...
+        # # Need to know the destination address for our data file.
+        # tree_data_dest=`grep trees_v_heights ${SRC_DIR}/play/labels.txt`
+        # echo ${tree_data_dest}
+        # if ! pike prepare_tree_data_file.pike "${count}" "${tree_data_dest}" "${TREES_DIR}"
+        # then
+        #     echo "Cannot prepare tree data file!"
+        #     exit 1
+        # fi
         # Crunch and write to disk.
         tfile_crunched=$(printf 't%02d.prg' ${count})
         cd ${coursedir}
@@ -229,7 +229,7 @@ done
 # Where will the 'best rounds' file be loaded to?
 best_rounds_dest=`grep finale_v_best_rounds_data ${SRC_DIR}/finale/labels.txt`
 cd ${TOOLS_DIR}/best_rounds_tables
-pike best_rounds_gen.pike "${best_rounds_dest}"
+#pike best_rounds_gen.pike "${best_rounds_dest}"
 # Write these tables to disk.  No need to crunch because only 35 bytes!!!
 ((i=0))
 while [ $i -lt ${NUM_COURSES} ]; do

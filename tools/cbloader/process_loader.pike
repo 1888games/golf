@@ -1,7 +1,7 @@
 constant PRG_ADDR = 0x59c;
 constant INITLOADER_ADDR = 0x3000;
 constant HEADER_SIZE = 2;
-constant CORE_DIR = "/home/matthew/hp2_progs/programming/6510assembly/golfgit/commodore-golf/src/core";
+constant CORE_DIR = "/users/nick/Dropbox/C64/Projects/Backburner/PGA/src/core";
 
 array(int) main_code = ({});
 array(int) init_code = ({});

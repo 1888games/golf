@@ -1,4 +1,4 @@
-constant FILENAME = "/home/matthew/hp2_progs/programming/6510assembly/commodore_golf/assets/trees_tile.png";
+constant FILENAME= "/users/nick/Dropbox/C64/Projects/Backburner/PGA/assets/trees_tile.png";
 constant PIXEL_PATTERN = 0b10;
 array(int) byte_array = ({});
 

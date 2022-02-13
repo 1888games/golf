@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SRC_DIR="/home/matthew/hp2_progs/programming/6510assembly/golfgit/commodore-golf/src"
-HOLES_DIR="/home/matthew/hp2_progs/programming/6510assembly/golfgit/commodore-golf/assets/holes"
+SRC_DIR="/users/nick/Dropbox/C64/Projects/Backburner/PGA/src"
+HOLES_DIR="/users/nick/Dropbox/C64/Projects/Backburner/PGA/assets/holes"
 
 cd ${HOLES_DIR}
 exomizer level -otryhole.prg tryhole.bin

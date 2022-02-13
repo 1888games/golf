@@ -1,0 +1,10 @@
+parsing
+flex pass 1
+Output pass
+Writing prg file: /Users/nick/Dropbox/C64/Projects/Backburner/PGA/Scripts/data/bin/zeropage.prg
+
+Memory Map
+----------
+
+Writing Vice symbol file: /Users/nick/Dropbox/C64/Projects/Backburner/PGA/Scripts/data/bin/zeropage.vs
+Writing Symbol file: zeropage.sym

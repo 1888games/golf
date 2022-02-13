@@ -1,5 +1,5 @@
 constant N = 15;
-constant BASE_DIR = "/home/matthew/hp2_progs/programming/6510assembly/commodore_golf/assets/trees";
+constant BASE_DIR = "/users/nick/Dropbox/C64/Projects/Backburner/PGA/assets/trees";
 
 int main()
 {

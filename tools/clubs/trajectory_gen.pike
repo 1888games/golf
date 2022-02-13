@@ -42,7 +42,7 @@ int main(int argc, array(string) argv)
     int vy = (int) (hyp * sin(theta));
     write("%d,%d\n", vz, vy);
 
-    string path = "/home/matthew/programming/6510assembly/golfgit/commodore-golf/src/clubv.bin";
+    string path = "users/nick/Dropbox/C64/Projects/Backburner/PGA/src/clubv.bin";
     object fout = Stdio.File(path, "wct");
     array a = allocate(54, 0);
     a[0]    = 0xd6;

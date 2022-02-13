@@ -1,0 +1,17 @@
+.label ZP=$2 {
+  .label CurrentID=$a
+  .label RowOffset=$5
+  .label Temp1=$7
+  .label Counter=$2
+  .label Column=$4
+  .label Amount=$9
+  .label ScreenAddress=$b
+  .label ColourAddress=$d
+  .label Row=$3
+  .label CharID=$6
+  .label Colour=$8
+}
+.label MAX_SPRITES=$14
+.label TextRow=$f
+.label PADDING=$5
+.label TextColumn=$10

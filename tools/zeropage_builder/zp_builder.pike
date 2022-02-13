@@ -1,4 +1,4 @@
-constant BASE_DIR = "/home/matthew/hp2_progs/programming/6510assembly/golfgit/commodore-golf";
+constant BASE_DIR = "/users/nick/Dropbox/C64/Projects/Backburner/PGA";
 constant SRC_DIR = BASE_DIR + "/src";
 
 int main()

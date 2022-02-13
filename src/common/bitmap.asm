@@ -1,25 +1,4 @@
-; Top-hole Golf
-; Copyright 2020-2021 Matthew Clarke
 
-
-; *****************
-; *** CONSTANTS ***
-; *****************
-
-
-; *****************
-; *** VARIABLES ***
-; *****************
-
-
-; *******************
-; ****** MACROS *****
-; *******************
-
-
-; *******************
-; *** SUBROUTINES ***
-; *******************
 ; INPUTS:   P0-P1 = bitmap data.
 !zone {
 .BMAP_SRC_LO = P0   ; bitmap
