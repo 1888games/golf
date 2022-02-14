@@ -75,44 +75,44 @@
 }
 .label CHAR_SET=$f000
 .label MAIN=$2000 {
-  .label Loop=$16c8 {
+  .label Loop=$172e {
   }
-  .label PerformFrameCodeFlag=$15ce
-  .label GameOverTimer=$15d3
-  .label MachineType=$15d1
-  .label ResetGame=$1631 {
+  .label PerformFrameCodeFlag=$1634
+  .label GameOverTimer=$1639
+  .label MachineType=$1637
+  .label ResetGame=$1697 {
   }
-  .label GameActive=$15d0
-  .label TitleScreen=$15f3 {
+  .label GameActive=$1636
+  .label TitleScreen=$1659 {
   }
-  .label GameMode=$15d2
-  .label Entry=$15d4 {
+  .label GameMode=$1638
+  .label Entry=$163a {
   }
-  .label FrameCode=$16d0 {
-    .label NoFire=$1703
-    .label TitleScreen2=$16e9
-    .label Ready=$1717
-    .label Playing=$1706
-    .label GameOver=$170c
-    .label GamePaused=$171f
-    .label ReadyTitle=$16f4
-    .label PreStage=$1709
+  .label FrameCode=$1736 {
+    .label NoFire=$1769
+    .label TitleScreen2=$174f
+    .label Ready=$177d
+    .label Playing=$176c
+    .label GameOver=$1772
+    .label GamePaused=$1785
+    .label ReadyTitle=$175a
+    .label PreStage=$176f
   }
-  .label SetGameColours=$16a9 {
+  .label SetGameColours=$170f {
   }
-  .label LoadScreen=$1673 {
+  .label LoadScreen=$16d9 {
   }
-  .label InitialiseGame=$166d {
+  .label InitialiseGame=$16d3 {
   }
-  .label GameIsOver=$15cf
-  .label SetupVIC=$1682 {
-    .label SwitchOnMulticolourMode=$169e
+  .label GameIsOver=$1635
+  .label SetupVIC=$16e8 {
+    .label SwitchOnMulticolourMode=$1704
   }
 }
 .label UP=$3
 .label IRQControlRegister2=$dd0d
 .label IRQControlRegister1=$dc0d
-.label TextColumn=$1c
+.label TextColumn=$1d
 .label play_no_music=$1415 {
   .label times7=$142a
 }
@@ -134,14 +134,15 @@
   .label P3=$12
   .label P4=$13
   .label P5=$14
-  .label MATHS0=$15
-  .label MATHS1=$16
+  .label MATHS0=$16
+  .label P6=$15
+  .label MATHS1=$17
   .label Amount=$9
-  .label MATHS2=$17
-  .label MATHS3=$18
+  .label MATHS2=$18
+  .label MATHS3=$19
   .label ColourAddress=$d
-  .label MATHS4=$19
-  .label MATHS5=$1a
+  .label MATHS4=$1a
+  .label MATHS5=$1b
   .label CharID=$6
   .label Colour=$8
   .label CurrentID=$a
@@ -171,6 +172,22 @@
 }
 .label MAP=$7000
 .label CHAR_COLORS=$71a0
+.label DECOMPRESSOR=$15ce {
+  .label Destination=$11
+  .label Pattern=$15
+  .label DisplayMCBitmap=$15ce {
+    .label Loop_Top=$15e7
+    .label NoCarry1=$15fa {
+    }
+    .label HandleRun=$1608
+    .label RunLoop=$1625
+    .label NoCarry2=$162c
+    .label Finish=$1633
+  }
+  .label EscapeCode=$13
+  .label DestinationIteration=$14
+  .label Source=$f
+}
 .label YELLOW_MULT=$f
 .label UP_MASK=$8
 .label PLOT=$12e1 {
@@ -236,18 +253,19 @@
 .label SFX_COMPLETE=$3
 .label PROCESSOR_PORT=$1
 .label BITMAP=$1516 {
-  .label ScreenRAMColourRam_Gap=$1000
-  .label BitmapScreenRAM_Gap=$8000
-  .label ColourRamDestination=$19
+  .label BITMAP_SIZE=$8000
+  .label BITMAP_BLOCKS=$83
+  .label ColourRamDestination=$1a
+  .label SCREEN_BLOCKS=$4
   .label BitmapSource=$f
-  .label ScreenRamDestination=$17
+  .label ScreenRamDestination=$18
   .label ColourRamSource=$13
   .label DrawMulticolour=$1516 {
   }
   .label CopyData=$1554 {
   }
   .label ScreenRamSource=$11
-  .label BitmapDestination=$15
+  .label BitmapDestination=$16
   .label BitmapData=$155b {
     .label YLoop1=$155f
     .label BitmapLoop=$155d
@@ -258,7 +276,10 @@
     .label YLoop1=$1589
     .label Finish=$15c8
   }
+  .label BITMAP_BLOCK_SIZE=$fa
   .label SetupSourcePointers=$1520 {
+    .label ScreenRAMColourRam_Gap=$1000
+    .label BitmapScreenRAM_Gap=$8000
   }
   .label SetupDestinationPointers=$153b {
   }
@@ -338,7 +359,7 @@
 .label play_with_music=$142d {
 }
 .label music_on=$13f5
-.label TextRow=$1b
+.label TextRow=$1c
 .label BLUE_MULT=$e
 .label sfx_6=$14df
 .label FALSE=$0

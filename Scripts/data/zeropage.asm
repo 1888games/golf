@@ -27,6 +27,7 @@ ZP: {
  	P3:						.byte 0
 	P4:						.byte 0
  	P5:						.byte 0
+ 	P6:						.byte 0
 
  	MATHS0:					.byte 0
  	MATHS1:					.byte 0

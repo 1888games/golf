@@ -25,8 +25,8 @@ MAIN: {
 
 
 	* = * "-----COMMON----"
-	#import "common/bitmap_kick.asm"	
-	
+	#import "common/bitmap.asm"	
+	#import "common/decompressor.asm"	
 
 	* = * "Main"
 

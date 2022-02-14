@@ -10,9 +10,11 @@ BITMAP: {
 	.label ScreenRamDestination = ZP.MATHS2
 	.label ColourRamDestination = ZP.MATHS4
 
-	.label BitmapScreenRAM_Gap = $8000
-	.label ScreenRAMColourRam_Gap = $1000
+	.label BITMAP_SIZE = $8000
+	.label BITMAP_BLOCK_SIZE = 250
+	.label BITMAP_BLOCKS = BITMAP_SIZE / BITMAP_BLOCK_SIZE
 
+	.label SCREEN_BLOCKS = 4
 
 	DrawMulticolour: {
 
@@ -30,6 +32,10 @@ BITMAP: {
 	SetupSourcePointers: {
 
 		 // Initialize pointers for video & color RAM.
+
+		.label BitmapScreenRAM_Gap = $8000
+		.label ScreenRAMColourRam_Gap = $1000
+
 
 		lda BitmapSource
 	    clc
@@ -85,7 +91,7 @@ BITMAP: {
 
 	BitmapData: {
 
-		ldx #32
+		ldx #BITMAP_BLOCKS
 
 		BitmapLoop:
 
@@ -96,14 +102,14 @@ BITMAP: {
 			lda (BitmapSource), y
 			sta (BitmapDestination), y
 			iny
-			cpy #250
+			cpy #BITMAP_BLOCK_SIZE
 			bne YLoop1
 
 			dex
 			beq Finish
 
-			MovePointer(BitmapSource, 250)
-			MovePointer(BitmapDestination, 250)
+			MovePointer(BitmapSource, BITMAP_BLOCK_SIZE)
+			MovePointer(BitmapDestination, BITMAP_BLOCK_SIZE)
 
 			jmp BitmapLoop
 
@@ -116,7 +122,7 @@ BITMAP: {
 
 	ScreenColourData: {
 
-		ldx #4
+		ldx #SCREEN_BLOCKS
 
 		Loop:
 
@@ -131,16 +137,16 @@ BITMAP: {
 			sta (ColourRamDestination), y
 
 			iny
-			cpy #250
+			cpy #BITMAP_BLOCK_SIZE
 			bne YLoop1
 
 			dex
 			beq Finish
 
-			MovePointer(ScreenRamSource, 250)
-			MovePointer(ScreenRamDestination, 250)
-			MovePointer(ColourRamSource, 250)
-			MovePointer(ColourRamDestination, 250)
+			MovePointer(ScreenRamSource, BITMAP_BLOCK_SIZE)
+			MovePointer(ScreenRamDestination, BITMAP_BLOCK_SIZE)
+			MovePointer(ColourRamSource, BITMAP_BLOCK_SIZE)
+			MovePointer(ColourRamDestination, BITMAP_BLOCK_SIZE)
 			
 			jmp Loop
 
