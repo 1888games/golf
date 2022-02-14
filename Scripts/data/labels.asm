@@ -11,14 +11,11 @@
 .label GAME_MAP =				0
 .label GAME_TITLE = 1
 
-
 .label PROCESSOR_PORT = 		$01
 .label INTERRUPT_VECTOR = 		$fffe
 .label JOY_PORT_2 = 			$dc00
 
 .label SCREEN_RAM = 			$c000
-.label SPRITE_POINTERS = SCREEN_RAM + $3f8
-
 
 .label IRQControlRegister1 = 	$dc0d
 .label IRQControlRegister2 = 	$dd0d
@@ -55,9 +52,26 @@
 
 
 
+// GFX_SETUP.ASM
 
+
+.label VIC_BANK_0 = %11
+.label VIC_BANK_1 = %10
+.label VIC_BANK_2 = %01
+.label VIC_BANK_3 = %00
+
+.label SCREEN_OFFSET = 2<<4 
+.label CHARSET_OFFSET = 0<<4
+.label BITMAP_OFFSET = 1<<3
+
+.label CHARS_TO = $C000
+.label CHAR_PAGES = 2
+
+.label SPRITE_POINTERS = DISPLAY_BASE + 1024 - 8
+.label DISPLAY_BASE= $C800
 .label BITMAP_BASE = $e000
-.label DISPLAY_BASE = $c800
+
+.label COLOR_RAM_OFFSET = VIC.COLOR_RAM - DISPLAY_BASE
 
 
 

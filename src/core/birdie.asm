@@ -10,22 +10,22 @@
 !source "mymacros.asm"
 !source "kb_matrix_codes.asm"
 
-*= $059c
-!bin "loader_main.bin"
-; NOTE: 'end_of_loader' is initial entry point into the program.
-end_of_loader
+        *= $059c
+        !bin "loader_main.bin"
+        ; NOTE: 'end_of_loader' is initial entry point into the program.
+        end_of_loader
 
-    jsr CB_INITLOADER
+            jsr CB_INITLOADER
 
-    ; Turn off BASIC ROM.
-    lda R6510
-    and #$fe
-    sta R6510
+            ; Turn off BASIC ROM.
+            lda R6510
+            and #$fe
+            sta R6510
 
-    lda #BLACK
-    sta EXTCOL
-    sta BGCOL0
-    jsr gfxs_s_init
+            lda #BLACK
+            sta EXTCOL
+            sta BGCOL0
+            jsr gfxs_s_init
     jsr app_s_run
 
 !source "joystick.asm"

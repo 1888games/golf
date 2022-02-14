@@ -42,6 +42,7 @@
 .label SFX_DEAD=$2
 .label LEFT_MASK=$1
 .label DOWN_MASK=$4
+.label SCREEN_OFFSET=$20
 .label channel=$13f6
 .label BITMAP_BASE=$e000
 .label GREEN_MULT=$d
@@ -75,61 +76,71 @@
 }
 .label CHAR_SET=$f000
 .label MAIN=$2000 {
-  .label Loop=$172e {
+  .label Loop=$176d {
   }
-  .label PerformFrameCodeFlag=$1634
-  .label GameOverTimer=$1639
-  .label MachineType=$1637
-  .label ResetGame=$1697 {
+  .label PerformFrameCodeFlag=$1669
+  .label GameOverTimer=$166e
+  .label MachineType=$166c
+  .label Birdie=$1691 {
   }
-  .label GameActive=$1636
-  .label TitleScreen=$1659 {
+  .label Loop2=$1695
+  .label ResetGame=$16d6 {
   }
-  .label GameMode=$1638
-  .label Entry=$163a {
+  .label GameActive=$166b
+  .label TitleScreen=$1698 {
   }
-  .label FrameCode=$1736 {
-    .label NoFire=$1769
-    .label TitleScreen2=$174f
-    .label Ready=$177d
-    .label Playing=$176c
-    .label GameOver=$1772
-    .label GamePaused=$1785
-    .label ReadyTitle=$175a
-    .label PreStage=$176f
+  .label GameMode=$166d
+  .label Entry=$166f {
   }
-  .label SetGameColours=$170f {
+  .label FrameCode=$1775 {
+    .label NoFire=$17a8
+    .label TitleScreen2=$178e
+    .label Ready=$17bc
+    .label Playing=$17ab
+    .label GameOver=$17b1
+    .label GamePaused=$17c4
+    .label ReadyTitle=$1799
+    .label PreStage=$17ae
   }
-  .label LoadScreen=$16d9 {
+  .label SetGameColours=$174e {
   }
-  .label InitialiseGame=$16d3 {
+  .label LoadScreen=$1718 {
   }
-  .label GameIsOver=$1635
-  .label SetupVIC=$16e8 {
-    .label SwitchOnMulticolourMode=$1704
+  .label InitialiseGame=$1712 {
+  }
+  .label GameIsOver=$166a
+  .label SetupVIC=$1727 {
+    .label SwitchOnMulticolourMode=$1743
   }
 }
 .label UP=$3
 .label IRQControlRegister2=$dd0d
 .label IRQControlRegister1=$dc0d
-.label TextColumn=$1d
+.label TextColumn=$1f
 .label play_no_music=$1415 {
   .label times7=$142a
 }
 .label LEFT=$0
+.label CHARSET_OFFSET=$0
 .label RED_MULT=$a
 .label TRUE=$1
 .label GAME_MAP=$0
+.label BITMAP_OFFSET=$8
 .label SFX_FIRE=$1
-.label SPRITE_POINTERS=$c3f8
+.label SPRITE_POINTERS=$cbf8
 .label MAP_TILES=$7104
 .label NTSC=$1
 .label channels=$143c
 .label WHITE_MULT=$9
 .label ZP=$2 {
+  .label RowOffset=$5
+  .label Colour=$8
+  .label CurrentID=$a
+  .label Counter=$2
+  .label Column=$4
+  .label ScreenAddress=$b
   .label P0=$f
   .label P1=$10
-  .label RowOffset=$5
   .label P2=$11
   .label P3=$12
   .label P4=$13
@@ -142,14 +153,10 @@
   .label MATHS3=$19
   .label ColourAddress=$d
   .label MATHS4=$1a
+  .label BitmapAddress=$1c
   .label MATHS5=$1b
   .label CharID=$6
-  .label Colour=$8
-  .label CurrentID=$a
   .label Temp1=$7
-  .label Counter=$2
-  .label Column=$4
-  .label ScreenAddress=$b
   .label Row=$3
 }
 .label SCREEN_RAM=$c000
@@ -157,6 +164,7 @@
 .label sfx_play=$1412 {
   .label sfx_routine=$1412
 }
+.label COLOR_RAM_OFFSET=$1000
 .label set_sfx_routine=$13f7 {
 }
 .label RIGHT_MASK=$2
@@ -359,13 +367,30 @@
 .label play_with_music=$142d {
 }
 .label music_on=$13f5
-.label TextRow=$1c
+.label GFX_SETUP=$1634 {
+  .label ClearBitmap=$1647 {
+    .label Loop=$1655
+    .label Final64=$1661
+    .label NUM_FULL_PAGES=$1f
+    .label Loop2=$1663
+    .label REMAINING_BYTES=$3f
+  }
+  .label Init=$1634 {
+  }
+}
+.label TextRow=$1e
 .label BLUE_MULT=$e
+.label VIC_BANK_2=$1
+.label CHARS_TO=$c000
 .label sfx_6=$14df
+.label VIC_BANK_3=$0
 .label FALSE=$0
 .label PAL=$0
+.label VIC_BANK_0=$3
+.label VIC_BANK_1=$2
 .label sfx_2=$144a
 .label SFX_ENEMY=$5
 .label sfx_3=$145d
+.label CHAR_PAGES=$2
 .label sfx_4=$14aa
 .label sfx_5=$14c8

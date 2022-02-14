@@ -8,7 +8,7 @@ Writing prg file: /Users/nick/Dropbox/C64/Projects/Backburner/PGA/Scripts/bin/ma
 Memory Map
 ----------
 Default-segment:
-  *$0002-$001d Temp vars zero page
+  *$0002-$001f Temp vars zero page
   $0801-$080c Basic
   $080e-$080d Basic End
   $1000-$1041 Modules
@@ -23,7 +23,9 @@ Default-segment:
   $1516-$1515 -----COMMON----
   $1516-$15cd -- Bitmap
   $15ce-$1633 -- Decompressor
-  $1634-$1787 Main
+  $1634-$1633 -----CORE----
+  $1634-$1668 -- GFX Setup
+  $1669-$17c6 Main
   $7000-$7103 Game Map
   $7104-$719f Game Tiles
   $71a0-$71b4 Game Colours

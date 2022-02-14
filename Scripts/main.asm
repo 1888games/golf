@@ -28,6 +28,9 @@ MAIN: {
 	#import "common/bitmap.asm"	
 	#import "common/decompressor.asm"	
 
+	* = * "-----CORE----"
+	#import "core/gfx_setup.asm"	
+
 	* = * "Main"
 
 	PerformFrameCodeFlag:	.byte FALSE
@@ -58,15 +61,28 @@ MAIN: {
 		jsr SetGameColours
 		jsr SetupVIC
 
-		//jsr $3000
-		
 
-	//	jmp TitleScreen
+		jsr Birdie
 
-		jmp InitialiseGame
+		jmp Loop2
 
 	}
 
+
+	Birdie: {
+
+		jsr GFX_SETUP.Init
+
+
+
+
+
+		rts
+	}
+
+	Loop2:
+
+		jmp Loop2
 
 
 	TitleScreen: {

@@ -36,6 +36,8 @@ ZP: {
 	MATHS4:					.byte 0
  	MATHS5:					.byte 0
 
+ 	BitmapAddress:				.word 0
+
 
 
 }
