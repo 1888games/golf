@@ -31,6 +31,15 @@ MAIN: {
 	* = * "-----CORE----"
 	#import "core/gfx_setup.asm"	
 
+
+	* = * "-----PLAY----"
+	#import "game/gameplay/play.asm"	
+	#import "game/gameplay/golfer.asm"
+
+	* = * "-----SYSTEM----"
+	#import "game/system/round_manager.asm"	
+	#import "game/system/score_cards.asm"	
+
 	* = * "Main"
 
 	PerformFrameCodeFlag:	.byte FALSE
@@ -72,8 +81,8 @@ MAIN: {
 	Birdie: {
 
 		jsr GFX_SETUP.Init
-
-
+		jsr UTILITY.EnableBitmapMode
+		jsr PLAY.Init
 
 
 

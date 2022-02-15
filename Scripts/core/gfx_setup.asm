@@ -61,6 +61,44 @@ GFX_SETUP: {
 		rts
 	}
 
+	InitColours: {
+
+		ldx #0
+
+		Loop:
+
+			lda #(YELLOW<<4)|GREEN
+			sta DISPLAY_BASE + (16*40), y
+			sta DISPLAY_BASE + (20*40), y
+
+			lda #LIGHT_BLUE
+   	 		sta VIC.COLOR_RAM+(16*40),x
+    		sta VIC.COLOR_RAM+(20*40),x
+
+    		inx
+    		cpx #160
+    		bne Loop
+
+    	ldx #0
+
+    	Loop2:
+
+    		lda #(GRAY<<4)|GREEN
+    		sta DISPLAY_BASE + (4*40), y
+			sta DISPLAY_BASE + (10*40), y
+
+			lda #GREY
+			sta VIC.COLOR_RAM+(4*40),x
+    		sta VIC.COLOR_RAM+(10*40),x
+    		inx
+    		cpx #240
+    		bne Loop2
+
+    		rts
+
+	}
+
+	
 
 
 }

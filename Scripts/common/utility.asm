@@ -55,4 +55,21 @@ UTILITY: {
 
 		rts
 	}
-}
+
+
+	EnableBitmapMode: {
+
+	 	lda VIC.SCREEN_CONTROL 
+	    ora #$20
+	    and #$7f
+	    sta VIC.SCREEN_CONTROL 
+	    lda #SCREEN_OFFSET+8
+	    sta VIC.MEMORY_SETUP
+
+	    rts
+
+
+	}
+
+
+} 

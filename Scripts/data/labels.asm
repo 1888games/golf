@@ -75,7 +75,7 @@
 
 
 
-
+.label MAX_PLAYERS = 4
 
 
 

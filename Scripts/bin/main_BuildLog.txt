@@ -13,23 +13,36 @@ Default-segment:
   $080e-$080d Basic End
   $1000-$1041 Modules
   $1042-$10bc IRQ
-  $10bd-$10eb Utility
-  $10ec-$1108 Input
-  $1109-$11a4 Joystick
-  $11a5-$12e0 Maploader
-  $12e1-$1399 -Plot
-  $139a-$13f4 -Random
-  $13f5-$1515 -Sound
-  $1516-$1515 -----COMMON----
-  $1516-$15cd -- Bitmap
-  $15ce-$1633 -- Decompressor
-  $1634-$1633 -----CORE----
-  $1634-$1668 -- GFX Setup
-  $1669-$17c6 Main
+  $10bd-$10fb Utility
+  $10fc-$1118 Input
+  $1119-$11b4 Joystick
+  $11b5-$12f0 Maploader
+  $12f1-$13a9 -Plot
+  $13aa-$1404 -Random
+  $1405-$1525 -Sound
+  $1526-$1525 -----COMMON----
+  $1526-$15dd -- Bitmap
+  $15de-$1643 -- Decompressor
+  $1644-$1643 -----CORE----
+  $1644-$16a7 -- GFX Setup
+  $16a8-$16a7 -----PLAY----
+  $16a8-$16ab -Play
+  $16ac-$16ab -----SYSTEM----
+  $16ac-$16af -Round Manager
+  $16b0-$174a -Scorecards
+  $174b-$18ae Main
   $7000-$7103 Game Map
   $7104-$719f Game Tiles
   $71a0-$71b4 Game Colours
   $c400-$c3ff Sprites
+  $cc00-$cbff   SPRITES
+  $cc00-$cc3f -Blank
+  $cc40-$cd3f -Reserved
+  $cd40-$d37f -Clubs
+  $d380-$d3bf -Crosshair
+  $d3c0-$d6ff -Backdrop
+  $d700-$d73f -Overhead Ball
+  $d740-$d77f -Top Sprites
   $f000-$f0a7 Charset
 
 Writing Vice symbol file: /Users/nick/Dropbox/C64/Projects/Backburner/PGA/Scripts/bin/main.vs

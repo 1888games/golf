@@ -1,3 +1,4 @@
+
 ; Top-hole Golf
 ; Copyright 2020-2021 Matthew Clarke
 
@@ -7,29 +8,29 @@
 !source "../core/mymacros.asm"
 !source "../core/sprite_data.asm"
 
-; NOTE: this is to preserve the colors for the messaging area - otherwise
-; the message disappears while game code loading!
-*= gfxs_c_DISPLAY_BASE+24*40    ;$c3c0
-    !fill   40,GREY3
+                    ; NOTE: this is to preserve the colors for the messaging area - otherwise
+                    ; the message disappears while game code loading!
+                    *= gfxs_c_DISPLAY_BASE+24*40    ;$c3c0
+                        !fill   40,GREY3
 
-*= $cc00
-; sprite #48
-play_l_BLANK_SPRITE_FLAG    !fill   64,0
-; sprite #49...
-; Reserve four sprite slots (4*64=256 bytes) for particles (*2), ball &
-; shadow.
-    !fill 4*64,0
+                    *= $cc00
+                    ; sprite #48
+                    play_l_BLANK_SPRITE_FLAG    !fill   64,0
+                    ; sprite #49...
+                    ; Reserve four sprite slots (4*64=256 bytes) for particles (*2), ball &
+                    ; shadow.
+                        !fill 4*64,0
 
-; sprite #53
-!bin "../../assets/sprites/clubs.bin"
-!bin "../../assets/sprites/crosshair.bin"
-; Reserve thirteen slots for backdrop sprites (animated or static).
-    !fill 13*64,0
-play_l_OVERHEAD_BALL_SPRITE
-    !bin "../../assets/sprites/overhead_ball.bin"
-play_l_MAX_STR_SPRITE
-    !bin "../../assets/sprites/top_spr.bin"
-play_c_END_OF_SPRITES
+                    ; sprite #53
+                    !bin "../../assets/sprites/clubs.bin"
+                    !bin "../../assets/sprites/crosshair.bin"
+                    ; Reserve thirteen slots for backdrop sprites (animated or static).
+                        !fill 13*64,0
+                    play_l_OVERHEAD_BALL_SPRITE
+                        !bin "../../assets/sprites/overhead_ball.bin"
+                    play_l_MAX_STR_SPRITE
+                        !bin "../../assets/sprites/top_spr.bin"
+                    play_c_END_OF_SPRITES
 
 *= end_of_core
 play_c_BEGIN = *
